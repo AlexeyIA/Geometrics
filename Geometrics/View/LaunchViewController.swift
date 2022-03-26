@@ -6,7 +6,7 @@ class LaunchViewController: UIViewController {
     @IBOutlet weak var launchImageView: UIImageView!
     
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
         
         UIView.animate(withDuration: 1.0, animations: {
@@ -19,12 +19,8 @@ class LaunchViewController: UIViewController {
             })
     }
     
-    
     func showSegue () {
-        
         self.performSegue(withIdentifier: "fromLaunchToMain", sender: self)
-        
-        print("segue ok")
     }
 
 }

@@ -1,0 +1,29 @@
+
+
+
+class LevelData {
+
+    enum Difficulty {
+        case easy, normal
+    }
+
+    struct PlacementInfo {
+        //how many figures on field width(onX), height(onY)
+        let onX: Double?
+        let onY: Double?
+    }
+
+    enum Forms: CaseIterable {
+        case circle, square, triangle
+    }
+
+    enum Colors: CaseIterable {
+        case blue, green, lightGreen
+    }
+    
+}
+
+
+
+
+
