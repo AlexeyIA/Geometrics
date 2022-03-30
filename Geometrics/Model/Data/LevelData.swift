@@ -9,8 +9,8 @@ class LevelData {
 
     struct PlacementInfo {
         //how many figures on field width(onX), height(onY)
-        let onX: Double?
-        let onY: Double?
+        let onX: Int
+        let onY: Int
     }
 
     enum Forms: CaseIterable {

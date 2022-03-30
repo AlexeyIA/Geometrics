@@ -15,21 +15,38 @@ class GameController: UIViewController {
     
     @IBAction func startButton(_ sender: Any) {
      
+        if let data = getClosedFiguresData() {
+            
+            for i in data {
+                print(i)
+            }
+        }
     }
 }
 
 
 extension GameController: DrawFiguresProtocol {
+   
     
-    func drawClosedFigures(inWidth: Double) -> [FigureData]? {
+    func getFieldFrame() -> (w: Double, h: Double) {
+        
+        let width = Double(self.view.frame.width)
+        let height = Double(self.view.frame.height)
+        
+        return (width, height)
+    }
+    
+    func getClosedFiguresData() -> [FigureData]? {
         
         let placements = level.getPlacementInfo()
         
-        return logic.drawingLogic.calcFigureSize(placements: placements, width: inWidth)
+        let logic = self.logic.placements
+     
+        let fieldFrame = getFieldFrame()
         
+        return logic.getClosedFiguresData(placements: placements, field: fieldFrame)
     }
     
-
     
 }
 

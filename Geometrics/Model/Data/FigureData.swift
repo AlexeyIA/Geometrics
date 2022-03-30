@@ -10,7 +10,8 @@ struct FigureData {
     
     let xPosition: Double
     let yPosition: Double
+    
     let width: Double
-    let height: Double
+    
     
 }

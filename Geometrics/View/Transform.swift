@@ -18,9 +18,8 @@ class Transform {
         let x = data.xPosition
         let y = data.yPosition
         let w = data.width
-        let h = data.height
         
-        return CGRect(x: x, y: y, width: w, height: h)
+        return CGRect(x: x, y: y, width: w, height: w)
     }
 
     

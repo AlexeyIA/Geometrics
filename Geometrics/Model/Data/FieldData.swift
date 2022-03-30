@@ -15,7 +15,7 @@ class FieldData {
     let heightPercent: Double = 0.6
     
     let borderPercent: Double = 0.05
-    
+   
     private init() {}
     
 }

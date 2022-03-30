@@ -8,6 +8,8 @@
 
 protocol DrawFiguresProtocol {
     
-    func drawClosedFigures(inWidth: Double) -> [FigureData]?
+    func getFieldFrame() -> (w: Double, h: Double)
+    
+    func getClosedFiguresData() -> [FigureData]?
             
 }
