@@ -11,27 +11,32 @@ class PlacementsLogic {
     func getClosedFiguresData(placements: LevelData.PlacementInfo) -> [FigureData] {
         
         let fieldWidth = FieldData.share.getWidth()
+        
         let fieldHeight = FieldData.share.getHeight()
-       
+      
         let border = getBorder(viewLength: fieldWidth)
         
         let spacesLength = border * (Double(placements.onX) + 1)
         
         let figureWidth = ( fieldWidth - spacesLength ) / Double(placements.onX)
             
-        var currentX = border
-        var currentY = fieldHeight - border
-        
         var figureDatas = [FigureData]()
         
+        var currentY = fieldHeight - border
+        
         for _ in 1...placements.onY {
+            
+            var currentX = border
+            
             currentY = currentY - border - figureWidth
+            
             for _ in 1...placements.onX {
-                currentX = currentX + border + figureWidth
                 
                 let figureData = FigureData(xPosition: currentX, yPosition: currentY, width: figureWidth)
                 
                 figureDatas.append(figureData)
+                
+                currentX = currentX + border + figureWidth
             }
         }
         return figureDatas

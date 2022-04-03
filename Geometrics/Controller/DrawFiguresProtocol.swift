@@ -10,7 +10,6 @@ protocol DrawFiguresProtocol {
     
     func setFieldFrame()
     
-    func getClosedFiguresData() -> [FigureData]?
+    func getClosedFiguresData() -> [FigureData]
     
-            
 }

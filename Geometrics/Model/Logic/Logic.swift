@@ -8,6 +8,6 @@
 
 class Logic {
     
-   let placements = PlacementsLogic()
+    let placements = PlacementsLogic()
 }
 

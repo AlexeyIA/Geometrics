@@ -20,6 +20,7 @@
 		8A6D969B27AAD5F800F28E49 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D969A27AAD5F800F28E49 /* LevelData.swift */; };
 		8A7112D827EDB2A0008FA3A9 /* FieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7112D727EDB2A0008FA3A9 /* FieldData.swift */; };
 		8A7112DA27EDB3B0008FA3A9 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7112D927EDB3B0008FA3A9 /* GameController.swift */; };
+		8A8C259427F9C9560003E397 /* FigureViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C259327F9C9560003E397 /* FigureViews.swift */; };
 		8ACE53A927EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53A827EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift */; };
 		8ACE53AB27EA0FCC00CEA4B6 /* LevelEasyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */; };
 		8ACE53AD27EA12E200CEA4B6 /* LevelNormalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */; };
@@ -42,6 +43,7 @@
 		8A6D969A27AAD5F800F28E49 /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		8A7112D727EDB2A0008FA3A9 /* FieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldData.swift; sourceTree = "<group>"; };
 		8A7112D927EDB3B0008FA3A9 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		8A8C259327F9C9560003E397 /* FigureViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureViews.swift; sourceTree = "<group>"; };
 		8ACE53A827EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAbstractDataProtocol.swift; sourceTree = "<group>"; };
 		8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEasyData.swift; sourceTree = "<group>"; };
 		8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelNormalData.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				8A5512EC2142962100468BA6 /* LaunchViewController.swift */,
 				8AF41D0D27EE1B9100DF81C4 /* Transform.swift */,
+				8A8C259327F9C9560003E397 /* FigureViews.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				8A3E8D2427A988E8003936D2 /* Level.swift in Sources */,
 				8A7112D827EDB2A0008FA3A9 /* FieldData.swift in Sources */,
+				8A8C259427F9C9560003E397 /* FigureViews.swift in Sources */,
 				8ACE53AB27EA0FCC00CEA4B6 /* LevelEasyData.swift in Sources */,
 				8A5512ED2142962100468BA6 /* LaunchViewController.swift in Sources */,
 				8AF41D0E27EE1B9100DF81C4 /* Transform.swift in Sources */,
