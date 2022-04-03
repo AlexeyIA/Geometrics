@@ -7,11 +7,11 @@
 //
 
 class PlacementsLogic {
+    
+    func getClosedFiguresData(placements: LevelData.PlacementInfo) -> [FigureData] {
         
-    func getClosedFiguresData(placements: LevelData.PlacementInfo, field: (w: Double, h: Double)) -> [FigureData] {
-        
-        let fieldWidth = field.w
-        let fieldHeight = field.h
+        let fieldWidth = FieldData.share.getWidth()
+        let fieldHeight = FieldData.share.getHeight()
        
         let border = getBorder(viewLength: fieldWidth)
         

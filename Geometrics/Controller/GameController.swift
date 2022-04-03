@@ -13,14 +13,13 @@ class GameController: UIViewController {
     
     private var logic = Logic()
     
+    override func viewDidLoad() {
+        
+    }
+    
     @IBAction func startButton(_ sender: Any) {
-     
-        if let data = getClosedFiguresData() {
-            
-            for i in data {
-                print(i)
-            }
-        }
+        setFieldFrame()
+        print(getClosedFiguresData())
     }
 }
 
@@ -28,12 +27,12 @@ class GameController: UIViewController {
 extension GameController: DrawFiguresProtocol {
    
     
-    func getFieldFrame() -> (w: Double, h: Double) {
+    func setFieldFrame() {
         
         let width = Double(self.view.frame.width)
         let height = Double(self.view.frame.height)
         
-        return (width, height)
+        FieldData.share.setFieldFrame(w: width, h: height)
     }
     
     func getClosedFiguresData() -> [FigureData]? {
@@ -42,9 +41,7 @@ extension GameController: DrawFiguresProtocol {
         
         let logic = self.logic.placements
      
-        let fieldFrame = getFieldFrame()
-        
-        return logic.getClosedFiguresData(placements: placements, field: fieldFrame)
+        return logic.getClosedFiguresData(placements: placements)
     }
     
     

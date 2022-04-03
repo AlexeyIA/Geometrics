@@ -15,7 +15,24 @@ class FieldData {
     let heightPercent: Double = 0.6
     
     let borderPercent: Double = 0.05
+    
+    // pixels of width and height
+    private var width = 0.0
+    private var height = 0.0
    
+    func getWidth() -> Double {
+        return width
+    }
+    
+    func getHeight() -> Double {
+        return height
+    }
+    
+    func setFieldFrame(w: Double, h: Double) {
+        width = w
+        height = h
+    }
+    
     private init() {}
     
 }
