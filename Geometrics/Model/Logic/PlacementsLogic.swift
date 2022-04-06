@@ -5,41 +5,49 @@
 //  Created by Alexey A on 25.03.2022.
 //  Copyright © 2022 Alexey A. All rights reserved.
 //
+import CoreGraphics
 
 class PlacementsLogic {
+        
+    func setFigureFrames(toLevel level: Level) {
     
-    func getClosedFiguresData(placements: LevelData.PlacementInfo) -> [FigureData] {
+        let fieldFrame = FieldData.share.getFieldFrame()
         
-        let fieldWidth = FieldData.share.getWidth()
+        let fieldWidth = Double(fieldFrame.width)
         
-        let fieldHeight = FieldData.share.getHeight()
+        let fieldHeight = Double(fieldFrame.height)
       
         let border = getBorder(viewLength: fieldWidth)
         
-        let spacesLength = border * (Double(placements.onX) + 1)
+        let onX = level.getPlacementInfo().onX
         
-        let figureWidth = ( fieldWidth - spacesLength ) / Double(placements.onX)
+        let onY = level.getPlacementInfo().onY
+        
+        let spacesLength = border * (Double(onX) + 1)
+        
+        let figureWidth = ( fieldWidth - spacesLength ) / Double(onX)
             
-        var figureDatas = [FigureData]()
+        var figureFrames = [CGRect]()
         
         var currentY = fieldHeight - border
         
-        for _ in 1...placements.onY {
+        for _ in 1...onY {
             
             var currentX = border
             
             currentY = currentY - border - figureWidth
             
-            for _ in 1...placements.onX {
+            for _ in 1...onX {
                 
-                let figureData = FigureData(xPosition: currentX, yPosition: currentY, width: figureWidth)
+                let figureData = CGRect(x: currentX, y: currentY, width: figureWidth, height: fieldWidth)
                 
-                figureDatas.append(figureData)
+                figureFrames.append(figureData)
                 
                 currentX = currentX + border + figureWidth
             }
         }
-        return figureDatas
+        
+        FieldData.share.setFigureFrames(frames: figureFrames)
     }
     
     

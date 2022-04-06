@@ -12,17 +12,6 @@ class Transform {
     
     private init() {}
    
-    
-    static func figureDataToRect(data: FigureData) -> CGRect {
-        
-        let x = data.xPosition
-        let y = data.yPosition
-        let w = data.width
-        
-        return CGRect(x: x, y: y, width: w, height: w)
-    }
-
-    
     func hexStringToUIColor (hexValue hex:String) -> UIColor {
         
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

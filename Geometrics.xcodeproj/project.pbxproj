@@ -13,7 +13,6 @@
 		8A3835B22142923A00CDA838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3835B12142923A00CDA838 /* Assets.xcassets */; };
 		8A3835B52142923A00CDA838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3835B32142923A00CDA838 /* LaunchScreen.storyboard */; };
 		8A3E8D2427A988E8003936D2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E8D2327A988E8003936D2 /* Level.swift */; };
-		8A469BDB27EDFF5D00C16F04 /* FigureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A469BDA27EDFF5D00C16F04 /* FigureData.swift */; };
 		8A54C04427EDEAE400199DE5 /* PlacementsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54C04327EDEAE400199DE5 /* PlacementsLogic.swift */; };
 		8A54C04627EDF09000199DE5 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54C04527EDF09000199DE5 /* Logic.swift */; };
 		8A5512ED2142962100468BA6 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5512EC2142962100468BA6 /* LaunchViewController.swift */; };
@@ -36,7 +35,6 @@
 		8A3835B42142923A00CDA838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A3835B62142923A00CDA838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A3E8D2327A988E8003936D2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		8A469BDA27EDFF5D00C16F04 /* FigureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureData.swift; sourceTree = "<group>"; };
 		8A54C04327EDEAE400199DE5 /* PlacementsLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementsLogic.swift; sourceTree = "<group>"; };
 		8A54C04527EDF09000199DE5 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		8A5512EC2142962100468BA6 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Geometrics/View/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -111,7 +109,6 @@
 				8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */,
 				8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */,
 				8A7112D727EDB2A0008FA3A9 /* FieldData.swift */,
-				8A469BDA27EDFF5D00C16F04 /* FigureData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 				8A6D969B27AAD5F800F28E49 /* LevelData.swift in Sources */,
 				8A3835AB2142923A00CDA838 /* AppDelegate.swift in Sources */,
 				8A54C04427EDEAE400199DE5 /* PlacementsLogic.swift in Sources */,
-				8A469BDB27EDFF5D00C16F04 /* FigureData.swift in Sources */,
 				8ACE53AD27EA12E200CEA4B6 /* LevelNormalData.swift in Sources */,
 				8A54C04627EDF09000199DE5 /* Logic.swift in Sources */,
 				8ACE53A927EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift in Sources */,

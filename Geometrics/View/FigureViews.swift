@@ -10,15 +10,13 @@ import UIKit
 
 class FigureViews {
     
-    func getClosedFigureViews(data: [FigureData]) -> [UILabel] {
+    func getClosedFigureViews(data: [CGRect]) -> [UILabel] {
         
         var fViews = [UILabel]()
         
         for figureData in data {
-            
-            let rect = Transform.figureDataToRect(data: figureData)
-            
-            let label = UILabel(frame: rect)
+        
+            let label = UILabel(frame: figureData)
             
             label.backgroundColor = .darkGray
             

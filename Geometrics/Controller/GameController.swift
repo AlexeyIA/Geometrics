@@ -17,48 +17,20 @@ class GameController: UIViewController {
 
     @IBAction func startButton(_ sender: Any) {
         
-        setFieldFrame()
-        
-        drawClosedFigures()
+        FieldData.share.setFieldFrame(frame: self.view.frame)
+
     }
 }
 
 
 extension GameController: DrawFiguresProtocol {
-    
-    func setFieldFrame() {
+
+    func setFigureFrames() {
         
-        let width = Double(self.view.frame.width)
-        let height = Double(self.view.frame.height)
-        
-        FieldData.share.setFieldFrame(w: width, h: height)
-    }
-    
-    func getClosedFiguresData() -> [FigureData] {
-        
-        let placements = level.getPlacementInfo()
-        
-        let logic = self.logic.placements
-     
-        return logic.getClosedFiguresData(placements: placements)
+        logic.placements.setFigureFrames(toLevel: level)
     }
 }
 
-extension GameController {
-    
-    func drawClosedFigures() {
-        
-        let data = getClosedFiguresData()
-        
-        let cFigures = figureViews.getClosedFigureViews(data: data)
-
-        for closedFigure in cFigures {
-            
-            view.addSubview(closedFigure)
-        }
-       
-    }
-}
 
 
 

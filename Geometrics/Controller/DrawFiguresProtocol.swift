@@ -8,8 +8,6 @@
 
 protocol DrawFiguresProtocol {
     
-    func setFieldFrame()
-    
-    func getClosedFiguresData() -> [FigureData]
+    func setFigureFrames()
     
 }

@@ -5,32 +5,31 @@
 //  Created by Alexey A on 25.03.2022.
 //  Copyright © 2022 Alexey A. All rights reserved.
 //
+import CoreGraphics
 
 class FieldData {
     
     static var share = FieldData()
     
-    // percent of main view
-    let widthPercent: Double = 0.9
-    let heightPercent: Double = 0.6
-    
     let borderPercent: Double = 0.05
     
-    // pixels of width and height
-    private var width = 0.0
-    private var height = 0.0
-   
-    func getWidth() -> Double {
-        return width
-    }
     
-    func getHeight() -> Double {
-        return height
-    }
+    private var fieldFrame = CGRect()
     
-    func setFieldFrame(w: Double, h: Double) {
-        width = w
-        height = h
+    func setFieldFrame(frame: CGRect) {
+        self.fieldFrame = frame
+    }
+    func getFieldFrame() -> CGRect {
+        return fieldFrame
+    }
+
+    private var figureFrames = [CGRect]()
+    
+    func setFigureFrames(frames: [CGRect]) {
+        figureFrames = frames
+    }
+    func getFigureFrames() -> [CGRect] {
+        return figureFrames
     }
     
     private init() {}

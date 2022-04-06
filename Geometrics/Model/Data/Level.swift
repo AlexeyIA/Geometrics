@@ -12,8 +12,6 @@ class Level {
             levelData = LevelEasyData()
         case .normal:
             levelData = LevelNormalData()
-        default:
-            break
         }
     }
 }
