@@ -9,5 +9,23 @@
 class Logic {
     
     let placements = PlacementsLogic()
+    
+    let gameplay = GameplayLogic()
+    
+    func play(inLevel lvl: Level) {
+        
+        switch gameplay.getState() {
+        
+        case .setFigureData:
+            
+            SetFigureDataLogic.setFigureData(inLevel: lvl)
+            
+        case .closeFigures:
+            print("Play for state closeFigures")
+            
+        default:
+            break
+        }
+    }
 }
 

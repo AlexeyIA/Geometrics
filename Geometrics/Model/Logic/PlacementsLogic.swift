@@ -17,11 +17,11 @@ class PlacementsLogic {
         
         let fieldHeight = Double(fieldFrame.height)
       
-        let border = getBorder(viewLength: fieldWidth)
+        let border = FieldData.share.borderPercent * fieldWidth
         
-        let onX = level.getPlacementInfo().onX
+        let onX = level.getPlacementInfo().onX // 4 
         
-        let onY = level.getPlacementInfo().onY
+        let onY = level.getPlacementInfo().onY // 4 or 5
         
         let spacesLength = border * (Double(onX) + 1)
         
@@ -39,9 +39,9 @@ class PlacementsLogic {
             
             for _ in 1...onX {
                 
-                let figureData = CGRect(x: currentX, y: currentY, width: figureWidth, height: fieldWidth)
+                let figureFrame = CGRect(x: currentX, y: currentY, width: figureWidth, height: figureWidth)
                 
-                figureFrames.append(figureData)
+                figureFrames.append(figureFrame)
                 
                 currentX = currentX + border + figureWidth
             }
@@ -49,12 +49,6 @@ class PlacementsLogic {
         
         FieldData.share.setFigureFrames(frames: figureFrames)
     }
-    
-    
-    private func getBorder(viewLength l: Double) -> Double {
-        return FieldData.share.borderPercent * l
-    }
-
 }
 
 

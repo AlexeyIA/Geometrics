@@ -13,23 +13,27 @@ class GameController: UIViewController {
     
     private var logic = Logic()
     
-    private var figureViews = FigureViews()
+    private var figureViews = [FigureView]()
+    
+    override func viewDidLoad() {
+        FieldData.share.setFieldFrame(frame: self.view.frame)
+    }
 
     @IBAction func startButton(_ sender: Any) {
         
-        FieldData.share.setFieldFrame(frame: self.view.frame)
-
-    }
-}
-
-
-extension GameController: DrawFiguresProtocol {
-
-    func setFigureFrames() {
+        if logic.gameplay.getState() == .start {
+            
+            logic.placements.setFigureFrames(toLevel: level)
         
-        logic.placements.setFigureFrames(toLevel: level)
+            logic.gameplay.setState(to: .setFigureData)
+            
+            logic.play(inLevel: level)
+        }
     }
 }
+
+
+
 
 
 
