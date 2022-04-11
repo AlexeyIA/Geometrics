@@ -24,6 +24,7 @@
 		8ACE53A927EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53A827EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift */; };
 		8ACE53AB27EA0FCC00CEA4B6 /* LevelEasyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */; };
 		8ACE53AD27EA12E200CEA4B6 /* LevelNormalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */; };
+		8AD5EDBA2804166900E00402 /* FigureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5EDB92804166900E00402 /* FigureData.swift */; };
 		8AF41D0E27EE1B9100DF81C4 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF41D0D27EE1B9100DF81C4 /* Transform.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		8ACE53A827EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAbstractDataProtocol.swift; sourceTree = "<group>"; };
 		8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEasyData.swift; sourceTree = "<group>"; };
 		8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelNormalData.swift; sourceTree = "<group>"; };
+		8AD5EDB92804166900E00402 /* FigureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureData.swift; sourceTree = "<group>"; };
 		8AF41D0D27EE1B9100DF81C4 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = Geometrics/View/Transform.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				8ACE53AA27EA0FCC00CEA4B6 /* LevelEasyData.swift */,
 				8ACE53AC27EA12E200CEA4B6 /* LevelNormalData.swift */,
 				8A7112D727EDB2A0008FA3A9 /* FieldData.swift */,
+				8AD5EDB92804166900E00402 /* FigureData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				8A153B4D27FF29F70094EDF4 /* GameplayLogic.swift in Sources */,
 				8ACE53AB27EA0FCC00CEA4B6 /* LevelEasyData.swift in Sources */,
 				8A5512ED2142962100468BA6 /* LaunchViewController.swift in Sources */,
+				8AD5EDBA2804166900E00402 /* FigureData.swift in Sources */,
 				8AF41D0E27EE1B9100DF81C4 /* Transform.swift in Sources */,
 				8A6D969B27AAD5F800F28E49 /* LevelData.swift in Sources */,
 				8A3835AB2142923A00CDA838 /* AppDelegate.swift in Sources */,

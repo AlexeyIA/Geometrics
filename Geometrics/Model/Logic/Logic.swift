@@ -8,6 +8,8 @@
 
 class Logic {
     
+    weak var controller: GameController?
+    
     let placements = PlacementsLogic()
     
     let gameplay = GameplayLogic()
@@ -18,7 +20,16 @@ class Logic {
         
         case .setFigureData:
             
-            SetFigureDataLogic.setFigureData(inLevel: lvl)
+            SetFigureDataLogic.share.setSelectedFigure(level: lvl)
+            
+            let d = SetFigureDataLogic.share.setFigureData(inLevel: lvl)
+            
+            controller!.setFigureData(data: d)
+            
+        case .setFigureViews:
+            
+            controller!.setFigureViews()
+            
             
         case .closeFigures:
             print("Play for state closeFigures")
@@ -27,5 +38,9 @@ class Logic {
             break
         }
     }
+    
+    
+    
+    
 }
 

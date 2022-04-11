@@ -25,7 +25,7 @@ class GameplayLogic {
 enum GameState {
     case start
     case setFigureData
-    case showFigures
+    case setFigureViews
     case closeFigures
     case inPlay
     case clearFigureData

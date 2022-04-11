@@ -13,7 +13,6 @@ class FieldData {
     
     let borderPercent: Double = 0.05
     
-    
     private var fieldFrame = CGRect()
     
     func setFieldFrame(frame: CGRect) {
@@ -22,7 +21,7 @@ class FieldData {
     func getFieldFrame() -> CGRect {
         return fieldFrame
     }
-
+    
     private var figureFrames = [CGRect]()
     
     func setFigureFrames(frames: [CGRect]) {
@@ -31,7 +30,7 @@ class FieldData {
     func getFigureFrames() -> [CGRect] {
         return figureFrames
     }
-    
+
     private init() {}
     
 }

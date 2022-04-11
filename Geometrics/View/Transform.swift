@@ -99,49 +99,6 @@ class Transform {
     }
     */
  
-    /*
-    func makeForm (figure: UILabel, form : String) {
-       
-        let mask = CAShapeLayer()
-        mask.frame = figure.layer.bounds
-        let width = figure.layer.frame.width
-        let height = figure.layer.frame.height
-        let path = CGMutablePath()
-        
-        if form == "square" {
-            path.move(to: CGPoint(x: 0.0, y: 0.0))
-            path.addLine(to: CGPoint(x: width, y: 0.0))
-            path.addLine(to: CGPoint(x: width, y: height))
-            path.addLine(to: CGPoint(x: 0.0, y: height))
-            mask.path = path
-            figure.layer.mask = mask
-        }
-       
-        if form == "triangle" {
-            path.move(to: CGPoint(x: 0.0, y: height))
-            path.addLine(to: CGPoint(x: width, y: height))
-            path.addLine(to: CGPoint(x: width/2, y: 0.0))
-            path.addLine(to: CGPoint(x: 0.0, y: height))
-            mask.path = path
-            figure.layer.mask = mask
-        }
-       
-        if form == "rect" {
-            path.move(to: CGPoint(x: 0.2*width, y: height))
-            path.addLine(to: CGPoint(x: width, y: 0.2*height))
-            path.addLine(to: CGPoint(x: 0.8*width, y: 0.0))
-            path.addLine(to: CGPoint(x: 0.0, y: 0.8*height))
-            mask.path = path
-            figure.layer.mask = mask
-        }
-        
-        if form == "circle" {
-            path.addEllipse(in: CGRect(x: 0.0, y: 0.0, width: width, height: height))
-            mask.path = path
-            figure.layer.mask = mask
-        }
-    }
- */
  
     
     

@@ -14,11 +14,11 @@ class LevelData {
     }
 
     enum Forms: CaseIterable {
-        case circle, square, triangle
+        case circle, square, triangle, closed
     }
 
     enum Colors: CaseIterable {
-        case blue, green, lightGreen
+        case blue, green, lightGreen, closed
     }
     
 }
