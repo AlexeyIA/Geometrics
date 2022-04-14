@@ -10,7 +10,7 @@ import UIKit
 
 class FigureView: UILabel {
 
-    func setView(data: FigureData) {
+    func setShape(data: FigureData) -> FigureView {
         
         let mask = CAShapeLayer()
         
@@ -19,7 +19,7 @@ class FigureView: UILabel {
         let height = self.frame.height
         let path = CGMutablePath()
         
-        self.backgroundColor = .black
+        setColor(color: data.getData().1)
         
         switch data.getData().0 {
             
@@ -46,10 +46,45 @@ class FigureView: UILabel {
         }
         
         self.layer.mask = mask
+        
+        return self
     }
     
-    private func getColor() -> UIColor {
-        return .black
+    func setColor (color: LevelData.Colors) {
+        switch color {
+        case .blue:
+            self.backgroundColor = .blue
+        case .green:
+            self.backgroundColor = .green
+        case .closed:
+            self.backgroundColor = .darkGray
+        default:
+            break
+        }
     }
+    
+    func hexStringToUIColor (hexValue hex:String) -> UIColor {
+           
+           var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+           
+           if cString.hasPrefix("#") {
+               cString.remove(at: cString.startIndex)
+           }
+
+           if cString.count != 6 {
+               return UIColor.gray // error color
+           }
+           
+           var rgbValue: UInt32 = 0
+           
+           Scanner(string: cString).scanHexInt32(&rgbValue)
+           
+           return UIColor(
+               red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+               green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+               blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+               alpha: CGFloat(1.0)
+           )
+       }
     
 }

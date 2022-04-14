@@ -8,25 +8,27 @@
 
 import Foundation
 
-class GameplayLogic {
+class GameState {
     
-    private var gameState = GameState.start
+    private var state = State.start
     
-    func setState(to state: GameState) {
-        gameState = state
+    func setState(to state: State) {
+        self.state = state
     }
     
-    func getState() -> GameState {
-        return gameState
+    func getState() -> State {
+        return state
     }
     
 }
 
-enum GameState {
+enum State {
     case start
     case setFigureData
     case setFigureViews
+    case setShapes
     case closeFigures
+    case setSelectedView
     case inPlay
     case clearFigureData
     case gameover

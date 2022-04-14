@@ -9,49 +9,60 @@ import UIKit
 
 class GameController: UIViewController {
     
-    private var level = Level(difficulty: .easy)
+    private var level = Level(difficulty: .normal)
     
     private var logic = Logic()
     
-    private var figureViews = [FigureView]()
-    private var figureDatas = [FigureData]()
+    private var figureView = [FigureView]()
+    private var figureData = [FigureData]()
+    
+    private var selectedFigureView: FigureView?
+    private var selectedFigureData: FigureData?
     
     override func viewDidLoad() {
-        FieldData.share.setFieldFrame(frame: self.view.frame)
+        
+        FieldData.share.setField(main: self.view.frame)
+        
         logic.controller = self
     }
 
     @IBAction func startButton(_ sender: Any) {
         
-        if logic.gameplay.getState() == .start {
+        logic.gameState.setState(to: .setFigureData)
             
-            logic.placements.setFigureFrames(toLevel: level)
-        
-            logic.gameplay.setState(to: .setFigureData)
+        logic.play(inLevel: level)
             
-            logic.play(inLevel: level)
-        }
     }
     
     func setFigureData(data: [FigureData]) {
-        for figureData in data {
-            figureDatas.append(figureData)
-        }
-        logic.gameplay.setState(to: .setFigureViews)
+        
+        figureData = data
+        
+        selectedFigureData = figureData.first
+        
+        logic.gameState.setState(to: .setFigureViews)
+        
         logic.play(inLevel: level)
     }
     
-    func setFigureViews() {
+    func setFigureViews(views: (FigureView, [FigureView])) {
         
-        for i in 0..<figureDatas.count {
-            let rect = FieldData.share.getFigureFrames()[i]
-            let view = FigureView(frame: rect)
-            view.setView(data: figureDatas[i])
-            figureViews.append(view)
-            self.view.addSubview(view)
+        let selected = views.0
+        
+        let figures = views.1
+        
+        selectedFigureView = selected.setShape(data: selectedFigureData!)
+        
+        self.view.addSubview(selected)
+        
+        for i in 0..<figures.count {
+                        
+            figureView.append(figures[i].setShape(data: figureData[i]))
+            
+            self.view.addSubview(figures[i])
         }
-        
     }
+
     
 }
 

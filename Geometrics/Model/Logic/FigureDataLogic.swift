@@ -8,20 +8,21 @@
 
 import Foundation
 
-class SetFigureDataLogic {
+class FigureDataLogic {
     
-    static var share = SetFigureDataLogic()
+    static var share = FigureDataLogic()
     
     private var selectedFigureForm = LevelData.Forms.closed
     private var selectedFigureColor = LevelData.Colors.closed
+    
+    private var figureData = [FigureData]()
     
     func setSelectedFigure(level: Level) {
         selectedFigureForm = level.getPossibleForms().randomElement()!
         selectedFigureColor = level.getPossibleColors().randomElement()!
     }
     
-    
-    func setFigureData(inLevel level: Level) -> [FigureData] {
+    func setFigureData(level: Level) {
         
         var figureData = [FigureData]()
         
@@ -43,8 +44,11 @@ class SetFigureDataLogic {
             figureData.append(figure)
         }
         
-       return figureData
-        
+        self.figureData = figureData
+    }
+    
+    func getData() -> [FigureData] {
+        return self.figureData
     }
     
     

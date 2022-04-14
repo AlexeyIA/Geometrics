@@ -11,26 +11,69 @@ class FieldData {
     
     static var share = FieldData()
     
-    let borderPercent: Double = 0.05
+    private let borderPercent: Double = 0.05
+    // base field 4x4
+    private let (onX, onY) = (4, 4)
+    // all (4x6), onY = 6 - for selected on 4x5 lvl
+    private var frames = [CGRect]()
     
-    private var fieldFrame = CGRect()
     
-    func setFieldFrame(frame: CGRect) {
-        self.fieldFrame = frame
-    }
-    func getFieldFrame() -> CGRect {
-        return fieldFrame
+    func setField(main frame: CGRect) {
+        
+        let fieldWidth = Double(frame.width)
+            
+        let fieldHeight = Double(frame.height)
+          
+        let border = borderPercent * fieldWidth
+        
+        let spacesLength = border * (Double(onX) + 1)
+            
+        let figureWidth = ( fieldWidth - spacesLength ) / Double(onX)
+                
+        var currentY = fieldHeight - border
+            
+        for _ in 1...(onY+2) {
+                
+            var currentX = border
+                
+            currentY = currentY - border - figureWidth
+                
+            for _ in 1...onX {
+                    
+                let figureFrame = CGRect(x: currentX, y: currentY, width: figureWidth, height: figureWidth)
+                    
+                frames.append(figureFrame)
+                    
+                currentX = currentX + border + figureWidth
+            }
+        }
     }
     
-    private var figureFrames = [CGRect]()
-    
-    func setFigureFrames(frames: [CGRect]) {
-        figureFrames = frames
+    // ------------------------------------------> (select, [figures])
+    func getFigureFrames(forLevel level: Level) -> (CGRect, [CGRect]) {
+        
+        var figureFrames = [CGRect]()
+        
+        let num = onX * onY
+        
+        for i in 0..<num {
+            figureFrames.append(frames[i])
+        }
+        
+        var index = figureFrames.count + onX - 1
+        
+        if level.getDifficulty() == LevelData.Difficulty.normal {
+            
+            for i in num..<num+onX {
+                figureFrames.append(frames[i])
+            }
+            
+            index += onX
+        }
+        
+        return (frames[index], figureFrames)
     }
-    func getFigureFrames() -> [CGRect] {
-        return figureFrames
-    }
-
+        
     private init() {}
     
 }

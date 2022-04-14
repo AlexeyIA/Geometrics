@@ -9,34 +9,53 @@
 class Logic {
     
     weak var controller: GameController?
-    
-    let placements = PlacementsLogic()
-    
-    let gameplay = GameplayLogic()
+        
+    let gameState = GameState()
     
     func play(inLevel lvl: Level) {
         
-        switch gameplay.getState() {
+        switch gameState.getState() {
         
         case .setFigureData:
             
-            SetFigureDataLogic.share.setSelectedFigure(level: lvl)
-            
-            let d = SetFigureDataLogic.share.setFigureData(inLevel: lvl)
-            
-            controller!.setFigureData(data: d)
+            setFigureData(level: lvl)
             
         case .setFigureViews:
             
-            controller!.setFigureViews()
-            
+            setFigureViews(level: lvl)
             
         case .closeFigures:
-            print("Play for state closeFigures")
+            
+            print("close figures")
             
         default:
             break
         }
+    }
+    
+    private func setFigureData(level: Level) {
+        
+        FigureDataLogic.share.setSelectedFigure(level: level)
+                   
+        FigureDataLogic.share.setFigureData(level: level)
+                   
+        controller!.setFigureData(data: FigureDataLogic.share.getData())
+    }
+    
+    private func setFigureViews(level: Level) {
+        
+        let frames = FieldData.share.getFigureFrames(forLevel: level)
+                   
+        let selected = FigureView(frame: frames.0)
+                   
+        var views = [FigureView]()
+                   
+        for frame in frames.1 {
+                       
+            views.append(FigureView(frame: frame))
+        }
+                   
+        controller!.setFigureViews(views: (selected, views))
     }
     
     
