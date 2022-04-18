@@ -44,6 +44,12 @@ class FigureDataLogic {
             figureData.append(figure)
         }
         
+        let selected = figureData.first
+        
+        figureData.shuffle()
+        
+        figureData[0] = selected!
+        
         self.figureData = figureData
     }
     

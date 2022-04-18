@@ -9,6 +9,10 @@
 import UIKit
 
 class FigureView: UILabel {
+    
+    weak var controller: GameController?
+    
+    private var data: FigureData?
 
     func setShape(data: FigureData) -> FigureView {
         
@@ -47,7 +51,32 @@ class FigureView: UILabel {
         
         self.layer.mask = mask
         
+        self.data = data
+        
+        setFigureTap()
+        
         return self
+    }
+    
+    func setFigureTap() {
+        
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.getData))
+        
+        self.isUserInteractionEnabled = true
+        
+        self.addGestureRecognizer(labelTap)
+        
+    }
+    
+    @objc func getData() {
+        
+        self.isUserInteractionEnabled = false
+        
+        if let data = self.data {
+            
+            controller?.setOpenFigureData(data: data)
+            
+        }
     }
     
     func setColor (color: LevelData.Colors) {
@@ -87,4 +116,6 @@ class FigureView: UILabel {
            )
        }
     
+    
+
 }

@@ -19,6 +19,8 @@ class GameController: UIViewController {
     private var selectedFigureView: FigureView?
     private var selectedFigureData: FigureData?
     
+    private var openFigureData: FigureData?
+    
     override func viewDidLoad() {
         
         FieldData.share.setField(main: self.view.frame)
@@ -44,7 +46,7 @@ class GameController: UIViewController {
         
         logic.play(inLevel: level)
     }
-    
+
     func setFigureViews(views: (FigureView, [FigureView])) {
         
         let selected = views.0
@@ -56,14 +58,21 @@ class GameController: UIViewController {
         self.view.addSubview(selected)
         
         for i in 0..<figures.count {
+            
+            figures[i].controller = self
                         
             figureView.append(figures[i].setShape(data: figureData[i]))
             
             self.view.addSubview(figures[i])
         }
     }
-
     
+    func setOpenFigureData(data: FigureData) {
+        
+        openFigureData = data
+
+    }
+
 }
 
 
