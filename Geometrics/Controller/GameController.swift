@@ -9,7 +9,7 @@ import UIKit
 
 class GameController: UIViewController {
     
-    private var level = Level(difficulty: .normal)
+    private var level = Level(difficulty: .easy)
     
     private var logic = Logic()
     
@@ -30,9 +30,13 @@ class GameController: UIViewController {
 
     @IBAction func startButton(_ sender: Any) {
         
-        logic.gameState.setState(to: .setFigureData)
+        if figureData.isEmpty {
+        
+            logic.gameState.setState(to: .setFigureData)
             
-        logic.play(inLevel: level)
+            logic.play(inLevel: level)
+        
+        }
             
     }
     
@@ -55,8 +59,6 @@ class GameController: UIViewController {
         
         selectedFigureView = selected.setShape(data: selectedFigureData!)
         
-        self.view.addSubview(selected)
-        
         for i in 0..<figures.count {
             
             figures[i].controller = self
@@ -65,12 +67,28 @@ class GameController: UIViewController {
             
             self.view.addSubview(figures[i])
         }
+        
+        logic.gameState.setState(to: .closeFigures)
+        
+        logic.play(inLevel: level)
     }
     
     func setOpenFigureData(data: FigureData) {
         
         openFigureData = data
+        
+        print(openFigureData!.getData())
 
+    }
+    
+    func closeFigures() {
+        
+        self.view.addSubview(selectedFigureView!)
+        
+        for figure in figureView {
+            figure.close()
+        }
+        
     }
 
 }

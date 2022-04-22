@@ -6,6 +6,8 @@
 //  Copyright © 2022 Alexey A. All rights reserved.
 //
 
+import Foundation
+
 class Logic {
     
     weak var controller: GameController?
@@ -26,7 +28,7 @@ class Logic {
             
         case .closeFigures:
             
-            print("close figures")
+            _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(closeFigures), userInfo: nil, repeats: false)
             
         default:
             break
@@ -56,6 +58,10 @@ class Logic {
         }
                    
         controller!.setFigureViews(views: (selected, views))
+    }
+    
+    @objc private func closeFigures() {
+        controller!.closeFigures()
     }
     
     
