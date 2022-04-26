@@ -14,6 +14,8 @@ class FigureView: UILabel {
     
     private var data: FigureData?
     
+    var isOpen = false
+    
     @discardableResult
     func setShape(data: FigureData) -> FigureView {
        
@@ -23,14 +25,14 @@ class FigureView: UILabel {
         
         self.data = data
         
+        setFigureTap()
+        
         return self
     }
     
     func setFigureTap() {
         
         let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.getData))
-        
-        self.isUserInteractionEnabled = true
         
         self.addGestureRecognizer(labelTap)
         
@@ -39,8 +41,6 @@ class FigureView: UILabel {
     @objc func getData() {
         
         open()
-        
-        self.isUserInteractionEnabled = false
         
         if let data = self.data {
             
@@ -53,10 +53,13 @@ class FigureView: UILabel {
     func close() {
         setForm(form: .closed)
         setColor(color: .closed)
-        setFigureTap()
+        self.isOpen = false
+        self.isUserInteractionEnabled = true
     }
     
     func open() {
+        self.isOpen = true
+        self.isUserInteractionEnabled = false
         setForm(form: data!.getData().0)
         setColor(color: data!.getData().1)
     }
@@ -97,9 +100,9 @@ class FigureView: UILabel {
     private func setColor (color: LevelData.Colors) {
         switch color {
         case .blue:
-            self.backgroundColor = .blue
+            self.backgroundColor = .systemBlue
         case .green:
-            self.backgroundColor = .green
+            self.backgroundColor = .systemGreen
         case .closed:
             self.backgroundColor = .darkGray
         default:

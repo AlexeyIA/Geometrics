@@ -26,10 +26,5 @@ enum State {
     case start
     case setFigureData
     case setFigureViews
-    case setShapes
     case closeFigures
-    case setSelectedView
-    case inPlay
-    case clearFigureData
-    case gameover
 }

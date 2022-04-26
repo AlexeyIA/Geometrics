@@ -21,6 +21,9 @@ class GameController: UIViewController {
     
     private var openFigureData: FigureData?
     
+    @IBOutlet var startButton: UIButton!
+    
+    
     override func viewDidLoad() {
         
         FieldData.share.setField(main: self.view.frame)
@@ -30,13 +33,11 @@ class GameController: UIViewController {
 
     @IBAction func startButton(_ sender: Any) {
         
-        if figureData.isEmpty {
+        startButton.isEnabled = false
         
-            logic.gameState.setState(to: .setFigureData)
+        logic.gameState.setState(to: .setFigureData)
             
-            logic.play(inLevel: level)
-        
-        }
+        logic.play(inLevel: level)
             
     }
     
@@ -70,6 +71,8 @@ class GameController: UIViewController {
         
         logic.gameState.setState(to: .closeFigures)
         
+        startButton.setTitle("REMEMBER", for: .disabled)
+        
         logic.play(inLevel: level)
     }
     
@@ -77,8 +80,51 @@ class GameController: UIViewController {
         
         openFigureData = data
         
-        print(openFigureData!.getData())
+        var haveClosedSelected = false
+        
+        let selectedData = selectedFigureData!.getData()
+        
+        for i in 0..<figureView.count {
+            
+            let data = figureData[i].getData()
+           
+            let figure = figureView[i]
+            
+            if !figure.isOpen && data == selectedData {
+                
+                haveClosedSelected = true
+            }
+        }
+        
+        if !haveClosedSelected {
+            
+            startButton.setTitle("ROUND ENDED", for: .disabled)
+            
+            _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(clearField), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc func clearField() {
+        
+        figureData.removeAll()
+        
+        for figure in figureView {
+            
+            figure.removeFromSuperview()
+        }
+        
+        figureView.removeAll()
 
+        selectedFigureData = nil
+        
+        selectedFigureView!.removeFromSuperview()
+        
+        selectedFigureView = nil
+        
+        logic.gameState.setState(to: .setFigureData)
+        
+        logic.play(inLevel: level)
+        
     }
     
     func closeFigures() {
@@ -88,6 +134,8 @@ class GameController: UIViewController {
         for figure in figureView {
             figure.close()
         }
+        
+        startButton.setTitle("OPEN NEXT", for: .disabled)
         
     }
 

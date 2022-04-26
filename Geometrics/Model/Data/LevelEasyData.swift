@@ -16,7 +16,7 @@ class LevelEasyData: LevelAbstractDataProtocol {
     }
     
     func getPossibleColors() -> [LevelData.Colors] {
-        return [.blue, .green]
+        return [.green]
     }
     
     
