@@ -22,34 +22,16 @@
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Xzr-tp-ift">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-Gj-7oH">
-                                <rect key="frame" x="118.5" y="75" width="83" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="LFa-uV-r5w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <state key="normal" title="START">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNY-pO-Rm1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xzr-tp-ift" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I00-UK-FZl"/>
                             <constraint firstItem="Xzr-tp-ift" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qoc-GH-Fqq"/>
-                            <constraint firstItem="Efh-Gj-7oH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="XvI-b6-my2"/>
                             <constraint firstItem="Xzr-tp-ift" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="lnY-Vp-YJY"/>
                             <constraint firstItem="Xzr-tp-ift" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xrS-IW-022"/>
-                            <constraint firstItem="Efh-Gj-7oH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xwH-26-Ubv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Pb-zJ-8LL"/>
-                    <connections>
-                        <outlet property="startButton" destination="Efh-Gj-7oH" id="ht8-lI-F8s"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

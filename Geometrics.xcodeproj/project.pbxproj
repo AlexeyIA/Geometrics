@@ -13,6 +13,7 @@
 		8A3835B02142923A00CDA838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3835AE2142923A00CDA838 /* Main.storyboard */; };
 		8A3835B22142923A00CDA838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3835B12142923A00CDA838 /* Assets.xcassets */; };
 		8A3835B52142923A00CDA838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3835B32142923A00CDA838 /* LaunchScreen.storyboard */; };
+		8A3C807A28368A62008DBD2C /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C807928368A62008DBD2C /* StartButton.swift */; };
 		8A3E8D2427A988E8003936D2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E8D2327A988E8003936D2 /* Level.swift */; };
 		8A54C04627EDF09000199DE5 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54C04527EDF09000199DE5 /* Logic.swift */; };
 		8A5512ED2142962100468BA6 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5512EC2142962100468BA6 /* LaunchViewController.swift */; };
@@ -35,6 +36,7 @@
 		8A3835B12142923A00CDA838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A3835B42142923A00CDA838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A3835B62142923A00CDA838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A3C807928368A62008DBD2C /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		8A3E8D2327A988E8003936D2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		8A54C04527EDF09000199DE5 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		8A5512EC2142962100468BA6 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Geometrics/View/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -129,6 +131,7 @@
 			children = (
 				8A5512EC2142962100468BA6 /* LaunchViewController.swift */,
 				8A8C259327F9C9560003E397 /* FigureView.swift */,
+				8A3C807928368A62008DBD2C /* StartButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				8A3835AB2142923A00CDA838 /* AppDelegate.swift in Sources */,
 				8ACE53AD27EA12E200CEA4B6 /* LevelNormalData.swift in Sources */,
 				8A54C04627EDF09000199DE5 /* Logic.swift in Sources */,
+				8A3C807A28368A62008DBD2C /* StartButton.swift in Sources */,
 				8ACE53A927EA0AB700CEA4B6 /* LevelAbstractDataProtocol.swift in Sources */,
 				8A7112DA27EDB3B0008FA3A9 /* GameController.swift in Sources */,
 			);

@@ -12,8 +12,10 @@ class FieldData {
     static var share = FieldData()
     
     private let borderPercent: Double = 0.05
+    
     // base field 4x4
     private let (onX, onY) = (4, 4)
+    
     // all (4x6), onY = 6 - for selected on 4x5 lvl
     private var frames = [CGRect]()
     

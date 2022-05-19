@@ -21,17 +21,22 @@ class GameController: UIViewController {
     
     private var openFigureData: FigureData?
     
-    @IBOutlet var startButton: UIButton!
-    
+    private var startButton = StartButton()
     
     override func viewDidLoad() {
         
         FieldData.share.setField(main: self.view.frame)
         
         logic.controller = self
+        
+        startButton.setFrame()
+        
+        startButton.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
+        
+        self.view.addSubview(startButton)
     }
 
-    @IBAction func startButton(_ sender: Any) {
+    @objc func startButtonPressed() {
         
         startButton.isEnabled = false
         
