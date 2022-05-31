@@ -10,14 +10,35 @@ import UIKit
 
 class StartButton: UIButton {
     
+    private var width: CGFloat = 100.0
+    private var height: CGFloat = 30.0
     
-    func setFrame() {
+    
+    func setFrame(main: CGRect) {
         
-        self.frame = CGRect(x: 50.0, y: 50.0, width: 100.0, height: 30.0)
+        let figureFrame = FieldData.share.getFigureFrames(forLevel: Level(difficulty: .easy)).0
+        
+        let yCoordinate = figureFrame.origin.y + figureFrame.height/2 - height/2
+        
+        width = figureFrame.width * 2
+        
+        let xCoordinate = main.midX - width/2
+        
+        self.frame = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: height)
+        
+        addTitle()
+        
+    }
+    
+    
+    func addTitle() {
         
         self.setTitle("START", for: .normal)
         
-        self.backgroundColor = .blue
+        self.setTitleColor(.darkGray, for: .normal)
+        
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
+        
     }
     
 }

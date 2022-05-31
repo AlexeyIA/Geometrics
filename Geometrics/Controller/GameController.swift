@@ -29,7 +29,7 @@ class GameController: UIViewController {
         
         logic.controller = self
         
-        startButton.setFrame()
+        startButton.setFrame(main: self.view.frame)
         
         startButton.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         
@@ -76,7 +76,7 @@ class GameController: UIViewController {
         
         logic.gameState.setState(to: .closeFigures)
         
-        startButton.setTitle("REMEMBER", for: .disabled)
+        startButton.setTitle("REMEMBER:", for: .disabled)
         
         logic.play(inLevel: level)
     }
@@ -103,7 +103,7 @@ class GameController: UIViewController {
         
         if !haveClosedSelected {
             
-            startButton.setTitle("ROUND ENDED", for: .disabled)
+            startButton.setTitle("NEXT ROUND", for: .disabled)
             
             _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(clearField), userInfo: nil, repeats: false)
         }
@@ -140,7 +140,7 @@ class GameController: UIViewController {
             figure.close()
         }
         
-        startButton.setTitle("OPEN NEXT", for: .disabled)
+        startButton.setTitle("OPEN NEXT:", for: .disabled)
         
     }
 
